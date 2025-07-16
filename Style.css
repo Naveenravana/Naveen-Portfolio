@@ -1,0 +1,398 @@
+/* ====== General Reset ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  background: transparent; /* Let #particles-js show through */
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+}
+
+a {
+  color: #0dcaf0;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ====== Particles Background ====== */
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0; left: 0;
+  z-index: -1;
+  background: linear-gradient(135deg, #0d6efd 0%, #6610f2 100%);
+}
+
+/* ====== Navbar ====== */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0,0,0,0.4);
+  padding: 15px 40px;
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: #ffc107;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+nav ul li a {
+  color: #fff;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #ffc107;
+}
+
+/* ====== Sections ====== */
+section {
+  max-width: 1000px;
+  margin: 80px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-block;
+  background: #ffc107;
+  color: #000;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #ffc10788;
+}
+
+/* ====== Cards & Containers ====== */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 12px;
+  padding: 20px;
+  min-width: 200px;
+  max-width: 300px;
+  backdrop-filter: blur(15px);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card span {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 5px 15px;
+  border-radius: 20px;
+  margin: 5px 5px 0 0;
+  font-size: 0.9rem;
+}
+
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
+  margin-top: 40px;
+}
+
+/* ====== Toast Pop-Up (Optional) ====== */
+.toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #0d6efd;
+  color: #fff;
+  padding: 15px 25px;
+  border-radius: 30px;
+  font-weight: 600;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  z-index: 2000;
+}
+
+.toast.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* ====== Responsive ====== */
+@media(max-width: 768px) {
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+}
+@media(max-width: 576px) {
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    max-width: 90%;
+  }
+}
+/* ====== Dark Mode (Optional) ====== */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #121212;
+        color: #e0e0e0;
+    }
+    
+    nav {
+        background: rgba(30,30,30,0.8);
+    }
+    
+    nav ul li a {
+        color: #e0e0e0;
+    }
+    
+    nav ul li a:hover,
+    nav ul li a.active {
+        color: #ffc107;
+    }
+    
+    .card {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255,255,255,0.3);
+    }
+    
+    footer {
+        background: rgba(30,30,30,0.8);
+    }
+    }
+/* ====== Custom Scrollbar (Optional) ====== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+/* ====== Smooth Scrolling (Optional) ====== */
+html {
+  scroll-behavior: smooth;
+}
+/* ====== Animations (Optional) ====== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+body {
+  animation: fadeIn 0.5s ease-in-out;
+}
+/* ====== Custom Fonts (Optional) ====== */
+@font-face {
+    font-family: 'Montserrat';
+    src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    }
+/* ====== Custom Variables (Optional) ====== */
+:root {
+  --primary-color: #0d6efd;
+  --secondary-color: #6610f2;       
+    --accent-color: #ffc107;
+    --text-color: #fff;
+    --background-color: #121212;
+    --card-bg: rgba(255, 255, 255, 0.1
+    );
+    --card-border: rgba(255, 255, 255, 0.2);
+    --navbar-bg: rgba(30, 30, 30, 0.8
+    );
+    --footer-bg: rgba(30, 30, 30, 0.8
+    );  
+    --toast-bg: #0d6efd;
+    --toast-text: #fff;
+    --toast-border-radius: 30px;
+    --toast-padding: 15px 25px;
+    --toast-font-weight: 600;
+    --toast-transition: opacity 0.4s ease, transform 0.4s ease;
+    --toast-z-index: 2000;
+    --scrollbar-width: 8px;
+    --scrollbar-thumb-bg: rgba(255, 255, 255, 0
+.5);
+    --scrollbar-thumb-hover-bg: rgba(255, 255, 255, 0.7);
+    --scrollbar-thumb-border-radius: 10px;
+    --smooth-scroll-behavior: smooth;
+    --animation-duration: 0.5s;
+    --animation-easing: ease-in-out;
+}   
+/* ====== Custom Media Queries (Optional) ====== */
+@media (max-width: 1200px) {
+    body {
+        font-size: 0.95rem;
+    }
+}
+@media (max-width: 992px) {
+    body {
+        font-size: 0.9rem;
+    }
+}   
+@media (max-width: 768px) {
+    body {
+        font-size: 0.85rem;
+    }
+}
+@media (max-width: 576px) {
+    body {
+        font-size: 0.8rem;
+    }
+}
+/* ====== Custom Animations (Optional) ====== */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    }
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+/* ====== Custom Scrollbar (Optional) ====== */
+::-webkit-scrollbar {
+    width: var(--scrollbar-width);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb-bg);
+    border-radius: var(--scrollbar-thumb-border-radius);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover-bg);
+}
+/* ====== Custom Toast Pop-Up (Optional) ====== */
+.toast {
+    background: var(--toast-bg);
+    color: var(--toast-text);
+    padding: var(--toast-padding);
+    border-radius: var(--toast-border-radius);
+    font-weight: var(--toast-font-weight);
+    transition: var(--toast-transition);
+    z-index: var(--toast-z-index);
+}   
+.toast.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+/* ====== Custom Smooth Scrolling (Optional) ====== */
+html {
+    scroll-behavior: var(--smooth-scroll-behavior);
+}
+/* ====== Custom Animations (Optional) ====== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}       
+body {
+    animation: fadeIn var(--animation-duration) var(--animation-easing);
+}
+/* ====== Custom Fonts (Optional) ====== */
+@font-face {
+    font-family: 'Montserrat';
+    src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+/* ====== Custom Variables (Optional) ====== */
+:root {
+    --primary-color: #0d6efd;
+    --secondary-color: #6610f2;
+    --accent-color: #ffc107;
+    --text-color: #fff;
+    --background-color: #121212;
+    --card-bg: rgba(255, 255, 255, 0.1);
+    --card-border: rgba(255, 255, 255, 0.2);
+    --navbar-bg: rgba(30, 30, 30, 0.8);
+    --footer-bg: rgba(30, 30, 30, 0.8);
+}
